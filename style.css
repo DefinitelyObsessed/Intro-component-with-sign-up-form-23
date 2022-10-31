@@ -123,17 +123,16 @@ form button {
   background-color: var(--clr-button);
   border-style: none;
   box-shadow: 0 3px 0 1px rgb(50, 186, 127);
+  color: var(--clr-form);
   cursor: pointer;
   font-weight: var(--fw-500);
   padding: 0.8rem;
   text-transform: uppercase;
-  transition-property: color, transform;
-  transition: ease 300ms;
+  transition:transform ease 300ms;
 }
 
 form button:hover {
   background-color: var(--clr-button-hover);
-  color: var(--clr-form);
   transform: scale(1.02);
 }
 
