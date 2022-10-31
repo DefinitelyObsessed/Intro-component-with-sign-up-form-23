@@ -1,0 +1,278 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Roots */
+:root {
+  --clr-body: hsl(0, 100%, 74%);
+  --clr-button: hsl(154, 59%, 51%);
+  --clr-button-hover: hsl(153, 24%, 69%);
+  --clr-form: #fff;
+  --clr-form-header: hsl(248, 32%, 49%);
+  --clr-input: hsl(249, 10%, 26%);
+  --clr-small: hsl(246, 25%, 77%);
+  --fs-body: 0.95rem;
+  --fs-h1: 2rem;
+  --fs-small: 0.7rem;
+  --ff-body: 'Poppins', sans-serif;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+/* Similar Parts */
+*, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(images/bg-intro-mobile.png);
+  background-color: var(--clr-body);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--clr-form);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-400);
+  text-align: center;
+}
+
+.sub-main-block, .form-block, form {
+  display: grid;
+}
+
+/* Main Block */
+main {
+  max-width: 80vw;
+  margin: 5rem auto;
+}
+
+/* Sub Main Block */
+.sub-main-block {
+  gap: 4rem;
+}
+
+/* Article Block */
+article h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-700);
+  margin-bottom: 1.5rem;
+}
+
+article p {
+  line-height: 1.7;
+}
+
+/* Form Block */
+.form-block {
+  gap: 2rem;
+}
+
+.form-header, form {
+  border-radius: 10px;
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);
+}
+
+.form-header {
+  background-color: var(--clr-form-header);
+  padding: 1rem 0;
+}
+
+.form-header span {
+  font-weight: var(--fw-600);
+}
+
+form {
+  background-color: var(--clr-form);
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+form input, button {
+  background-color: var(--clr-form);
+  border-radius: 5px;
+  display: block;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  width: 100%;
+}
+
+form input {
+  border: solid 1px var(--clr-small);
+  color: var(--clr-input);
+  font-weight: var(--fw-600);
+  padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+}
+
+input:focus {
+  border: solid 2px var(--clr-form-header);
+}
+
+form em {
+  color: var(--clr-body);
+  display: none;
+  font-weight: var(--fw-500);
+  margin-top: 0.4rem;
+  transition-property: display;
+  transition: 300ms ease;
+}
+
+form button {
+  background-color: var(--clr-button);
+  border-style: none;
+  box-shadow: 0 3px 0 1px rgb(50, 186, 127);
+  cursor: pointer;
+  font-weight: var(--fw-500);
+  padding: 0.8rem;
+  text-transform: uppercase;
+  transition-property: color, transform;
+  transition: ease 300ms;
+}
+
+form button:hover {
+  background-color: var(--clr-button-hover);
+  color: var(--clr-form);
+  transform: scale(1.02);
+}
+
+em, small {
+  font-size: var(--fs-small);
+}
+
+small {
+  font-weight: var(--fw-500);
+  color: var(--clr-small);
+}
+
+small span {
+  color: var(--clr-body);
+  font-weight: var(--fw-700);
+}
+
+/* Error Block */
+.error {
+  text-align: right;
+}
+
+.error input {
+  border-color: var(--clr-body);
+  color: var(--clr-body);
+}
+
+.error em {
+  display: block;
+}
+
+.error em::after {
+  content: '';
+  background-image: url(images/icon-error.svg);
+  background-repeat: no-repeat;
+  height: 3rem;
+  position: absolute;
+  right: 12vw;
+  transform: translateY(-2.5rem);
+  width: 3rem;
+}
+
+/* Responsiveness Section */
+@media (min-width:900px) {
+  .sub-main-block {
+    align-items: center;
+    grid-template-areas: 'A B';
+  }
+
+  article {
+    grid-area: A;
+    text-align: left;
+  }
+
+  .form-block {
+    grid-area: B;
+  }
+}
+
+@media (min-width:1200px) {
+  body {
+    background: url(images/bg-intro-desktop.png);
+    background-color: var(--clr-body);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  :root {
+    --fs-body: 1.1rem;
+    --fs-h1: 2.25rem;
+  }
+}
+
+@media (min-width:1400px) {
+  .sub-main-block {
+    gap: 4vw;
+  }
+
+  .form-block {
+    width: 36vw;
+  }
+
+  form {
+    padding: 2.25vw;
+  }
+
+  :root {
+    --fs-h1: 3rem;
+  }
+}
+
+@media (min-width:1600px) {
+  main {
+    margin: 6.5rem auto;
+  }
+
+  :root {
+    --fs-body: 1.3rem;
+    --fs-h1: 3.6rem;
+    --fs-small: 0.9rem;
+  }
+}
+
+@media (min-width:1900px) {
+  main {
+    margin: 9rem auto;
+  }
+
+  .error em::after {
+    background-size: cover;
+    height: 2vw;
+    right: 13vw;
+    transform: translateY(-3.4rem);
+    width: 2vw;
+  }
+
+  :root {
+    --fs-body: 1.6rem;
+    --fs-h1: 4rem;
+    --fs-small: 1.1rem;
+  }
+}
+
+@media (min-width:2200px) {
+  main {
+    margin: 14rem auto;
+  }
+
+  form {
+    gap: 2rem;
+  }
+
+  .error em::after {
+    transform: translateY(-4rem);
+  }
+
+  :root {
+    --fs-body: 1.9rem;
+    --fs-h1: 4.8rem;
+    --fs-small: 1.4rem;
+  }
+}
